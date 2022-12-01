@@ -3,7 +3,7 @@ package com.zipcodewilmington.singlylinkedlist;
 /**
  * Created by leon on 1/10/18.
  */
-public class SinglyLinkedList {
+public class SinglyLinkedList<E> {
     //these have no reason to be accessed outside this class so yeah that is why they are private
     //these are the atributes of the singly linked list...
     private Node<E> first;
@@ -12,10 +12,11 @@ public class SinglyLinkedList {
     //gotta make the constructor....you really gotta get better at this
     //you don't even need accessors or mutators for the fields!!!
     public SinglyLinkedList(){
-        first = null;
-        size = 0;
+        this.first = null;
+        this.size = 0;
     }
     //inner node class is static because you can really only access the nodes from an instance of SinglyLinkedList
+    //inner classes aren't really great practice, but in this case linked lists are made of nodes... so it is alright
     public static class Node<E>{
         //so what makes up a node? prolly the data that holds it and the reference to get to the next node
         //the data holds the type E by itself... idk.
@@ -28,7 +29,7 @@ public class SinglyLinkedList {
             data = obj;
             next = null;
         }
-        private Node (E obj, Node nextRef){
+        private Node (E obj, Node<E> nextRef){
             data = obj;
             next = nextRef;
         }
@@ -51,17 +52,41 @@ public class SinglyLinkedList {
 
     //these are just void rn because idk what to do...
     //also intellij stop correcting me on my comments, ugly...
-    public void add(E objToAdd){
-        if ()
+
+    //ok ok so the parameters have to be node <e> and not just e because
+    //we literally are adding the nodes and not the values...
+    public void add(Node<E> nodeToAdd){
+
     }
-    public void remove(E objToRemove){}
-    public void contains(E objToCheck){}
-    public void find(E objToFind){}
+    public void remove(Node<E> nodeToRemove){}
+    public boolean contains(Node<E> nodeToCheck){
+        return false;
+    }
+    public Integer find(Node<E> nodeToFind){
+//        SinglyLinkedList<E> a = new SinglyLinkedList<E>();
+//        for (int i = 0; i < a.size; i++) {
+//            if (a.get(i).contains(nodeToFind)) {
+//                return i;
+//            }
+//        } return -1;
+        return -1;
+    }
     public Integer size(){
+        SinglyLinkedList<E> a = new SinglyLinkedList<E>();
+        for (int i = 0; i < a.size; i++) {
+            size++;
+        }
         return size;
     }
-    public void get(){}
-    public void copy(){}
-    public void sort(){}
+    public Node<E> get(Integer index){
+        return new Node<E>(null);
+    }
+    public SinglyLinkedList<E> copy(SinglyLinkedList<E> listToCopy){
+        //look up deep vs shallow copy
+        return new SinglyLinkedList<E>();
+    }
+    public void sort(SinglyLinkedList<E> listToSort){
+
+    }
 }
 
