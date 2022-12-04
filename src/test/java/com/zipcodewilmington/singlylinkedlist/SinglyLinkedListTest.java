@@ -2,81 +2,67 @@ package com.zipcodewilmington.singlylinkedlist;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 /**
  * Created by leon on 1/10/18.
  */
 public class SinglyLinkedListTest {
 
-    @Test
-    public void addTest(){
-        SinglyLinkedList<E> myList = new SinglyLinkedList<E>();
-        SinglyLinkedList.Node<E> nodeToAdd1 = "ZipCode";
-        SinglyLinkedList.Node<E> nodeToAdd2 = "Wilmington";
-        myList.add(nodeToAdd1);
-        myList.add(nodeToAdd2);
-        assertTrue(myList.size == 2);
-    }
+//    @Test
+//    public void addTest(){
+//        SinglyLinkedList myList = new SinglyLinkedList();
+//        myList.add(3);
+//        myList.add(8);
+//        assertTrue(myList.sizeOfList() == 2);
+//    }
 
-    @Test
-    public void remove(){
-        SinglyLinkedList<E> hereIsAList = new SinglyLinkedList<E>();
-        SinglyLinkedList.Node<E> nodeToAdd1 = 1;
-        SinglyLinkedList.Node<E> nodeToAdd2 = 2;
-        SinglyLinkedList.Node<E> nodeToAdd3 = 3;
-        SinglyLinkedList.Node<E> nodeToAdd4 = 4;
-        SinglyLinkedList.Node<E> nodeToAdd5 = 5;
-        hereIsAList.add(nodeToAdd1);
-        hereIsAList.add(nodeToAdd2);
-        hereIsAList.add(nodeToAdd3);
-        hereIsAList.add(nodeToAdd4);
-        hereIsAList.add(nodeToAdd5);
-        hereIsAList.remove(nodeToAdd1);
-        hereIsAList.remove(nodeToAdd3);
-        hereIsAList.remove(nodeToAdd5);
-        assertTrue(hereIsAList.contains(nodeToAdd2) &&
-                hereIsAList.contains(nodeToAdd4) && hereIsAList.size() == 2);
-    }
+//    @Test
+//    public void remove(){
+//        SinglyLinkedList hereIsAList = new SinglyLinkedList();
+//
+//        hereIsAList.add(1);
+//        hereIsAList.add(2);
+//        hereIsAList.add(3);
+//        hereIsAList.add(4);
+//        hereIsAList.add(5);
+//        hereIsAList.remove(1);
+//        hereIsAList.remove(3);
+//        hereIsAList.remove(5);
+//        assertTrue(hereIsAList.contains(nodeToAdd2) &&
+//                hereIsAList.contains(nodeToAdd4) && hereIsAList.size() == 2);
+//    }
     @Test
     public void contains(){
-        SinglyLinkedList<E> myList = new SinglyLinkedList<E>();
-        SinglyLinkedList.Node<E> nodeToAdd1 = "ZipCode";
-        SinglyLinkedList.Node<E> nodeToAdd2 = "Wilmington";
-        myList.add(nodeToAdd1);
-        myList.add(nodeToAdd2);
-        assertTrue(myList.contains(nodeToAdd1));
+        SinglyLinkedList myList = new SinglyLinkedList();
+        myList.add(5);
+        myList.add(6);
+        myList.add(3);
+        myList.add(8);
+        assertTrue(myList.contains(6));
     }
     @Test
     public void find(){
-        SinglyLinkedList<E> hereIsAList = new SinglyLinkedList<E>();
-        SinglyLinkedList.Node<E> nodeToAdd1 = 1;
-        SinglyLinkedList.Node<E> nodeToAdd2 = 2;
-        SinglyLinkedList.Node<E> nodeToAdd3 = 3;
-        SinglyLinkedList.Node<E> nodeToAdd4 = 4;
-        SinglyLinkedList.Node<E> nodeToAdd5 = 5;
-        hereIsAList.add(nodeToAdd1);
-        hereIsAList.add(nodeToAdd2);
-        hereIsAList.add(nodeToAdd3);
-        hereIsAList.add(nodeToAdd4);
-        hereIsAList.add(nodeToAdd5);
-        Integer expected = 3;
-        Integer actual = hereIsAList.find(nodeToAdd4);
+        SinglyLinkedList hereIsAList = new SinglyLinkedList();
+        hereIsAList.add(4);
+        hereIsAList.add(3);
+        hereIsAList.add(7);
+        hereIsAList.add(1);
+        Integer expected = 1;
+        Integer actual = hereIsAList.find(3, hereIsAList);
         assertEquals(expected, actual);
     }
     @Test
-    public void size(){
-        SinglyLinkedList<E> hereIsAList = new SinglyLinkedList<E>();
-        SinglyLinkedList.Node<E> nodeToAdd1 = true;
-        SinglyLinkedList.Node<E> nodeToAdd2 = true;
-        SinglyLinkedList.Node<E> nodeToAdd3 = false;
-        SinglyLinkedList.Node<E> nodeToAdd4 = true;
-        SinglyLinkedList.Node<E> nodeToAdd5 = false;
-        hereIsAList.add(nodeToAdd1);
-        hereIsAList.add(nodeToAdd2);
-        hereIsAList.add(nodeToAdd3);
-        hereIsAList.add(nodeToAdd4);
-        hereIsAList.add(nodeToAdd5);
+    public void sizeOfList(){
+        SinglyLinkedList hereIsAList = new SinglyLinkedList();
+        hereIsAList.add(7);
+        hereIsAList.add(3);
+        hereIsAList.add(9);
+        hereIsAList.add(2);
+        hereIsAList.add(5);
         Integer expected = 5;
-        Integer actual = hereIsAList.size();
+        Integer actual = hereIsAList.sizeOfList(hereIsAList);
         assertEquals(expected,actual);
     }
 }
