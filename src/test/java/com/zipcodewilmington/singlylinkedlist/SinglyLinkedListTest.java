@@ -17,7 +17,7 @@ public class SinglyLinkedListTest {
 //        myList.add(8);
 //        assertTrue(myList.sizeOfList() == 2);
 //    }
-
+//
 //    @Test
 //    public void remove(){
 //        SinglyLinkedList hereIsAList = new SinglyLinkedList();
@@ -64,5 +64,18 @@ public class SinglyLinkedListTest {
         Integer expected = 5;
         Integer actual = hereIsAList.sizeOfList(hereIsAList);
         assertEquals(expected,actual);
+    }
+
+    @Test
+    public void getTest(){
+        SinglyLinkedList hereIsAList = new SinglyLinkedList();
+        hereIsAList.add(7);
+        hereIsAList.add(3);
+        hereIsAList.add(9);
+        hereIsAList.add(2);
+        hereIsAList.add(5);
+        Integer expected = 5;
+        Integer actual = hereIsAList.get(4, hereIsAList);
+        assertEquals(expected, actual);
     }
 }

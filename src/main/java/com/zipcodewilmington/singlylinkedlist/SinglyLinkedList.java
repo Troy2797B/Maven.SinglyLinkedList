@@ -1,5 +1,8 @@
 package com.zipcodewilmington.singlylinkedlist;
 //DONT DELETE THIS DELETE THE OTHER ONE
+
+import java.util.NoSuchElementException;
+
 /**
  * Created by leon on 1/10/18.
  */
@@ -81,22 +84,33 @@ public class SinglyLinkedList{
     public Integer get(Integer index, SinglyLinkedList list){
         Node current = first;
         int count = 0;
+
         if (list.sizeOfList(list) < index){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Index not found in list.");
         }
-        while (current != null){
-            if (current.data != value){
-                current = current.next;
-                count++;
-            }
-            if (current.data == value){
-                return count;
-            }
-        } return count;
+        while (true){
+            Integer results = 0;
+            count++;
+            if (count == index){
+                results =  current.data;
+            } return results;
+        }
     }
     public SinglyLinkedList copy(SinglyLinkedList listToCopy){
         //look up deep vs shallow copy
-        return new SinglyLinkedList();
+        SinglyLinkedList list = new SinglyLinkedList();
+        if(list.sizeOfList(listToCopy) == null){
+            throw new NoSuchElementException("Your list doesn't even exist lol do better");
+        }
+        Node current = first;
+        int count = 0;
+        Integer n = 0;
+        while (current != null){
+            count++;
+            n = listToCopy.get(count, listToCopy);
+            list.add(n);
+        }
+        return list;
     }
     public void sort(SinglyLinkedList listToSort){
 
