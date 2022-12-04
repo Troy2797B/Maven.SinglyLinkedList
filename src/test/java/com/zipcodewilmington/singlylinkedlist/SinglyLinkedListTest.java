@@ -78,4 +78,18 @@ public class SinglyLinkedListTest {
         Integer actual = hereIsAList.get(4, hereIsAList);
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void copyTest(){
+        SinglyLinkedList hereIsAList = new SinglyLinkedList();
+        hereIsAList.add(7);
+        hereIsAList.add(3);
+        hereIsAList.add(9);
+        hereIsAList.add(2);
+        hereIsAList.add(5);
+
+        Integer expected = hereIsAList.sizeOfList(hereIsAList);
+
+        assertTrue();
+    }
 }

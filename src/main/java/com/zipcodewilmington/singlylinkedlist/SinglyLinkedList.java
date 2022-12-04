@@ -84,17 +84,17 @@ public class SinglyLinkedList{
     public Integer get(Integer index, SinglyLinkedList list){
         Node current = first;
         int count = 0;
-
+        Integer results = 0;
         if (list.sizeOfList(list) < index){
             throw new IllegalArgumentException("Index not found in list.");
         }
-        while (true){
-            Integer results = 0;
+        while (count != index + 1){
             count++;
+            current = current.next;
             if (count == index){
                 results =  current.data;
-            } return results;
-        }
+            }
+        } return results;
     }
     public SinglyLinkedList copy(SinglyLinkedList listToCopy){
         //look up deep vs shallow copy
@@ -106,6 +106,7 @@ public class SinglyLinkedList{
         int count = 0;
         Integer n = 0;
         while (current != null){
+            current = current.next;
             count++;
             n = listToCopy.get(count, listToCopy);
             list.add(n);
