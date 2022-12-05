@@ -96,7 +96,7 @@ public class SinglyLinkedList{
             }
         } return results;
     }
-    public SinglyLinkedList copy(SinglyLinkedList listToCopy){
+    public SinglyLinkedList copy1(SinglyLinkedList listToCopy){
         //look up deep vs shallow copy
         SinglyLinkedList list = new SinglyLinkedList();
         if(list.sizeOfList(listToCopy) == null){

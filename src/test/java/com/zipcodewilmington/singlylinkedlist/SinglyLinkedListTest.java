@@ -2,8 +2,7 @@ package com.zipcodewilmington.singlylinkedlist;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * Created by leon on 1/10/18.
@@ -89,7 +88,7 @@ public class SinglyLinkedListTest {
         hereIsAList.add(5);
 
         Integer expected = hereIsAList.sizeOfList(hereIsAList);
-
-        assertTrue();
+        Integer actual = hereIsAList.copy1(hereIsAList).sizeOfList(hereIsAList);
+        assertSame(actual, expected);
     }
 }
