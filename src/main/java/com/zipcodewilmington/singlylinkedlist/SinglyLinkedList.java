@@ -8,6 +8,22 @@ import java.util.NoSuchElementException;
  */
 public class SinglyLinkedList{
     public static class Node{
+        public int getData() {
+            return data;
+        }
+
+        public void setData(int data) {
+            this.data = data;
+        }
+
+        public Node getNext() {
+            return next;
+        }
+
+        public void setNext(Node next) {
+            this.next = next;
+        }
+
         private int data;
         private Node next;
 
@@ -19,6 +35,10 @@ public class SinglyLinkedList{
 
     private Node first;
     private Node last;
+
+//    public boolean hasNext(){
+//        return this.next != null;
+//    }
 
 
     public void add(int data){
@@ -35,13 +55,13 @@ public class SinglyLinkedList{
     public void remove(int index) throws Exception {
         int count =0;
         Node current = first;
-        if(current == null){
+        if(index == 0){
             throw new Exception("You know better.");
         }
         while (current != null){
+            count++;
             if (count != index){
                 current = current.next;
-                count++;
             }
             if (count == index){
                current = null;
@@ -96,29 +116,31 @@ public class SinglyLinkedList{
             }
         } return results;
     }
-    public SinglyLinkedList copy1(SinglyLinkedList listToCopy){
-        //look up deep vs shallow copy
-        SinglyLinkedList list = new SinglyLinkedList();
-        if(list.sizeOfList(listToCopy) == null){
-            throw new NoSuchElementException("Your list doesn't even exist lol do better");
-        }
-        Node current = first;
-        int count = 0;
-        Integer n = 0;
-        while (current != null){
-            current = current.next;
-            count++;
-            n = listToCopy.get(count, listToCopy);
-            list.add(n);
-        }
-        return list;
-    }
-    public void sort(SinglyLinkedList listToSort){
-
-    }
-    public int compareTo(Object o) {
-        return 0;
-    }
+//    public SinglyLinkedList copy1(SinglyLinkedList listToCopy){
+//        //look up deep vs shallow copy
+//        SinglyLinkedList list = new SinglyLinkedList();
+//        if(list.sizeOfList(listToCopy) == null){
+//            throw new NoSuchElementException("Your list doesn't even exist lol do better");
+//        }
+//        Node current = first;
+//        int count = 0;
+//        Integer n = 0;
+//        while (current != null){
+//            list.add(current.getData());
+//            current = current.next;
+//            count++;
+//            n = listToCopy.get(count, listToCopy);
+//            list.add(n);
+//        }
+//        return list;
+//    }
+//    public void sort(SinglyLinkedList listToSort){
+//
+//    }
+//    public int compareTo(Node node2) {
+//
+//        return (this.data.compareTo(node2.getData()));
+//    }
 }
 //so what makes up a node? prolly the data that holds it and the reference to get to the next node
 //the data holds the type E by itself... idk.

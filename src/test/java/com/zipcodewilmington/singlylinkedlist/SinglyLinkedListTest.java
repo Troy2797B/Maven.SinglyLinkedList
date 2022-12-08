@@ -9,16 +9,16 @@ import static org.junit.Assert.*;
  */
 public class SinglyLinkedListTest {
 
+    @Test
+    public void addTest(){
+        SinglyLinkedList myList = new SinglyLinkedList();
+        myList.add(3);
+        myList.add(8);
+        assertTrue(myList.sizeOfList(myList) == 2);
+    }
+
 //    @Test
-//    public void addTest(){
-//        SinglyLinkedList myList = new SinglyLinkedList();
-//        myList.add(3);
-//        myList.add(8);
-//        assertTrue(myList.sizeOfList() == 2);
-//    }
-//
-//    @Test
-//    public void remove(){
+//    public void remove() throws Exception {
 //        SinglyLinkedList hereIsAList = new SinglyLinkedList();
 //
 //        hereIsAList.add(1);
@@ -29,8 +29,9 @@ public class SinglyLinkedListTest {
 //        hereIsAList.remove(1);
 //        hereIsAList.remove(3);
 //        hereIsAList.remove(5);
-//        assertTrue(hereIsAList.contains(nodeToAdd2) &&
-//                hereIsAList.contains(nodeToAdd4) && hereIsAList.size() == 2);
+//        assertTrue(hereIsAList.contains(1) && hereIsAList.contains(3) && hereIsAList.contains(5));
+//        assertTrue(hereIsAList.contains(2) &&
+//                hereIsAList.contains(4) && hereIsAList.sizeOfList(hereIsAList) == 2);
 //    }
     @Test
     public void contains(){
@@ -78,17 +79,17 @@ public class SinglyLinkedListTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    public void copyTest(){
-        SinglyLinkedList hereIsAList = new SinglyLinkedList();
-        hereIsAList.add(7);
-        hereIsAList.add(3);
-        hereIsAList.add(9);
-        hereIsAList.add(2);
-        hereIsAList.add(5);
-
-        Integer expected = hereIsAList.sizeOfList(hereIsAList);
-        Integer actual = hereIsAList.copy1(hereIsAList).sizeOfList(hereIsAList);
-        assertSame(actual, expected);
-    }
+//    @Test
+//    public void copyTest(){
+//        SinglyLinkedList hereIsAList = new SinglyLinkedList();
+//        hereIsAList.add(7);
+//        hereIsAList.add(3);
+//        hereIsAList.add(9);
+//        hereIsAList.add(2);
+//        hereIsAList.add(5);
+//
+//        Integer expected = hereIsAList.sizeOfList(hereIsAList);
+//        Integer actual = hereIsAList.copy1(hereIsAList).sizeOfList(hereIsAList);
+//        assertSame(actual, expected);
+//    }
 }
